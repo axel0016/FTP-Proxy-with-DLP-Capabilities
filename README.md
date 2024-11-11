@@ -1,24 +1,38 @@
-# FTP Proxy with DLP
- 
-This project is an FTP Proxy server with basic Data Loss Prevention (DLP) capabilities. It monitors file uploads, checks for sensitive content, and forwards or blocks files based on the results.
+# Web Nmap Application Setup Guide
 
-## Features
-- **FTP Proxy:** Acts as an intermediary server to handle FTP requests.
-- **DLP Checks:** Scans uploaded files for sensitive content using keyword matching.
-- **Custom Login:** Prompts for real server credentials via a graphical interface.
-- **File Blocking:** Blocks sensitive files and forwards allowed files to a real server.
-- **Alerts:** Displays alerts via message boxes for key actions.
+This guide provides a step-by-step process to install and run the **Web Nmap** application using Docker on **Ubuntu** or **Kali Linux**.
 
-## Installation
+## Prerequisites
 
-Clone the repository and install dependencies:
+Ensure you have the following:
+- A Debian-based Linux distribution (e.g., Ubuntu or Kali Linux)
+- Administrative (sudo) privileges
+
+## Steps
+
+### 1. Update Your Package List
+
+Run the following command to update your system's package list:
 
 ```bash
-git clone https://github.com/your-username/ftp-proxy-dlp.git
-cd ftp-proxy-dlp
-pip install pyftpdlib
+sudo apt update
 ```
-## Usage
-1. Connect to the server using an FTP client on port `2121`.
-2. Enter the real server’s credentials when prompted.
-3. Files containing sensitive content are blocked, and others are forwarded to the specified FTP server.
+###2. Install Docker by running:
+```bash
+sudo apt install docker.io
+```
+###3. Download the Web Nmap Docker Image
+Pull the Docker image for the Web Nmap application:
+```bash
+sudo docker pull abdoumk/web_nmap:1.4
+```
+###4. Run the Docker Container
+Start the Docker container with host networking:
+```bash
+sudo docker run --network host abdoumk/web_nmap:1.4
+```
+###5. Access the Application
+Once the container is running, open a web browser and navigate to the machine’s IP address on port 5000:
+```bash
+http://<your-machine-host-ip>:5000
+```
