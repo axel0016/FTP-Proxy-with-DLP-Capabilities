@@ -17,21 +17,21 @@ Run the following command to update your system's package list:
 ```bash
 sudo apt update
 ```
-###2. Install Docker by running:
+### 2. Install Docker by running:
 ```bash
 sudo apt install docker.io
 ```
-###3. Download the Web Nmap Docker Image
+### 3. Download the Web Nmap Docker Image
 Pull the Docker image for the Web Nmap application:
 ```bash
 sudo docker pull abdoumk/web_nmap:1.4
 ```
-###4. Run the Docker Container
+### 4. Run the Docker Container
 Start the Docker container with host networking:
 ```bash
 sudo docker run --network host abdoumk/web_nmap:1.4
 ```
-###5. Access the Application
+### 5. Access the Application
 Once the container is running, open a web browser and navigate to the machine’s IP address on port 5000:
 ```bash
 http://<your-machine-host-ip>:5000
