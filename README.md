@@ -1,4 +1,4 @@
-# Web Nmap Application Setup Guide
+# Web Nmap Application Setup Guide using Docker
 
 This guide provides a step-by-step process to install and run the **Web Nmap** application using Docker on **Ubuntu** or **Kali Linux**.
 
@@ -24,12 +24,12 @@ sudo apt install docker.io
 ### 3. Download the Web Nmap Docker Image
 Pull the Docker image for the Web Nmap application:
 ```bash
-sudo docker pull abdoumk/web_nmap:1.4
+sudo docker pull abdoumk/web_nmap:1.6
 ```
 ### 4. Run the Docker Container
 Start the Docker container with host networking:
 ```bash
-sudo docker run --network host abdoumk/web_nmap:1.4
+sudo docker run --network host abdoumk/web_nmap:1.6
 ```
 ### 5. Access the Application
 Once the container is running, open a web browser and navigate to the machine’s IP address on port 5000:
